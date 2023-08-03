@@ -1,0 +1,1 @@
+["/Users/xiaoguangli/lxg/CV/publication/ICCV_2023/final_version/code/Inpainting_pretraining/data/masks/00384.png", "/Users/xiaoguangli/lxg/CV/publication/ICCV_2023/final_version/code/Inpainting_pretraining/data/masks/00470.png", "/Users/xiaoguangli/lxg/CV/publication/ICCV_2023/final_version/code/Inpainting_pretraining/data/masks/00476.png"]
