@@ -105,7 +105,7 @@ Try our method in Google Colab
     python ./shadow_removal/Evaluation.py 
     ```
 ## Results
-- Comparsion with SOTA
+- Comparsion with SOTA methods
 ![Framework](./images/comparison.png)
 
 - L1 difference on ISTD+ dataset
