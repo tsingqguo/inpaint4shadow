@@ -1,4 +1,4 @@
-# Leveraging Inpainting for Single-Image Shadow Removal in ICCV2023
+# Leveraging Inpainting for Single-Image Shadow Removal, Accepted by ICCV2023
 
 In this work, we find that pretraining shadow removal networks on the image inpainting dataset can reduce the shadow remnants significantly: a naive encoder-decoder network gets competitive restoration quality w.r.t. the state-of-the-art methods via only 10% shadow & shadow-free image pairs. After analyzing networks with/without inpainting pretraining via the information stored in the weight (IIW), we find that inpainting pretraining improves restoration quality in non-shadow regions and enhances the generalization ability of networks significantly. Additionally, shadow removal fine-tuning enables networks to fill in the details of shadow regions. Inspired by these observations we formulate shadow removal as an adaptive fusion task that takes advantage of both shadow removal and image inpainting. The extensive experiments show that our method empowered with inpainting outperforms all state-of-the-art methods.[[ArXiv]](https://arxiv.org/abs/2302.05361)
 <br>
@@ -105,11 +105,14 @@ Try our method in Google Colab
     python ./shadow_removal/Evaluation.py 
     ```
 ## Results
-
-- Comparsion with SOTA.
-
+- Comparsion with SOTA
 ![Framework](./images/comparison.png)
 
+- L1 difference on ISTD+ dataset
+![Framework](./images/L1_diff_ISTD+.png)
+
+- L1 difference on SRD dataset
+![Framework](./images/L1_diff_SRD.png)
 
 ## Bibtex
 
