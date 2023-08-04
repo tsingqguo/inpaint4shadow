@@ -15,87 +15,95 @@ Try our method in Google Colab
 ## Prerequisites
 - Python 3
 - PyTorch >= 1.0
-```
-conda create -n inpaint4shadow python=3.7
+    ```
+    conda create -n inpaint4shadow python=3.7
 
-conda activate inpaint4shadow
+    conda activate inpaint4shadow
 
-conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.1 -c pytorch
+    conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.1 -c pytorch
 
-pip install -r requirements.txt
-```
+    pip install -r requirements.txt
+    ```
 
 ## Dataset
 
 - [ISTD+](https://github.com/cvlab-stonybrook/SID)
-- SRD[Email](https://people.ucas.edu.cn/~tianjd)
+- SRD[(please email the author)](https://people.ucas.edu.cn/~tianjd)
 
 - For data folder path (ISTD+) organize them as following:
 
-```shell
---ISTD+
-   --train
-      --train_A (shadow images)
-          --1.png
-          --2.png
-          --3.png
-      --train_B (ground truth shadow masks)
-          --1.png
-          --2.png
-          --3.png
-      --train_C (ground truth)
-          --1.png
-          --2.png
-          --3.png
-   --test
-      --test_A (shadow images)
-          --1.png
-          --2.png
-          --3.png
-      --test_B (ground truth shadow masks)
-          --1.png
-          --2.png
-          --3.png
-      --test_B_detected (detected shadow masks)
-          --1.png
-          --2.png
-          --3.png
-      --test_C (ground truth)
-          --1.png
-          --2.png
-          --3.png
- ```
+  ```shell
+    --ISTD+
+       --train
+          --train_A (shadow images)
+              --1.png
+              --2.png
+              --3.png
+          --train_B (ground truth shadow masks)
+              --1.png
+              --2.png
+              --3.png
+          --train_C (ground truth)
+              --1.png
+              --2.png
+              --3.png
+       --test
+          --test_A (shadow images)
+              --1.png
+              --2.png
+              --3.png
+          --test_B (ground truth shadow masks)
+              --1.png
+              --2.png
+              --3.png
+          --test_B_detected (detected shadow masks)
+              --1.png
+              --2.png
+              --3.png
+          --test_C (ground truth)
+              --1.png
+              --2.png
+              --3.png
+     ```
 
 - Generate the image list
- ```
-python  ./data/data_list.py
- ```
-
+   ```
+   python  ./data/data_list.py
+   ```
 ## Pretrained models
-- [ISTD+](https://#)
-- [SRD](https://#)
+- [ISTD+](https://drive.google.com/drive/folders/1WjEwrSjeF7rBiaVuPQakc3uHGdFyGc5e?usp=sharing)
+- [SRD](https://drive.google.com/drive/folders/1WjEwrSjeF7rBiaVuPQakc3uHGdFyGc5e?usp=sharing)
 
 ## De-shadowed results
-- [ISTD+](https://#)
-- [SRD](https://#)
+- [ISTD+](https://drive.google.com/drive/folders/1gna_0-ECys93k77bUFCo_9npJ8Av8iqm?usp=sharing)
+- [SRD](https://drive.google.com/drive/folders/1gna_0-ECys93k77bUFCo_9npJ8Av8iqm?usp=sharing)
 ## Training
 - #### Inpainting pretraining
-        python ./Inpainting_pretraining/train.py
-        Setup parameters: ./Inpainting_pretraining/checkpoints/config.yml
+  Setup parameters: ./Inpainting_pretraining/checkpoints/config.yml
+  ```
+  python ./Inpainting_pretraining/train.py
+  ```
 - #### Shadow removal fine-tuning
-        python ./shadow_removal/train.py
-        Setup parameters: ./shadow_removal/checkpoints/config.yml
+  Setup parameters: ./shadow_removal/checkpoints/config.yml
+  ```      
+  python ./shadow_removal/train.py
+  ```  
 
 ## Testing
 - #### Shadow removal on ISTD+ dataset
 
- ```
 1. Downloaded the "ISTD+.pth" and put that under ./shadow_removal/checkpoints.
 2. Update "MODEL_LOAD: ISTD+.pth" in ./shadow_removal/checkpoints/config.yml.
 3. Update the test dataset path in ./shadow_removal/checkpoints/config.yml. 
-4. python ./shadow_removal/test.py
- ```
-
+    ```
+    python ./shadow_removal/test.py 
+    ```
+- #### Evaluation
+1. The RMSE results reported in the paper are calculated by the <a href='https://drive.google.com/file/d/1SAMqLy3dSONPgeC5ZQskPoeq60FEx9Vk/view'>matlab script</a>. Our evaluation code will print the metrics calculated by python code and save the de-shadowed results which will be used by the matlab script.
+2. PSNR, SSIM, and LPIPS
+    ```
+    python ./shadow_removal/Evaluation.py 
+    ```
 ## Results
 
 - Comparsion with SOTA.
