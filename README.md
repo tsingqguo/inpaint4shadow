@@ -3,7 +3,7 @@
 In this work, we find that pretraining shadow removal networks on the image inpainting dataset can reduce the shadow remnants significantly: a naive encoder-decoder network gets competitive restoration quality w.r.t. the state-of-the-art methods via only 10% shadow & shadow-free image pairs. After analyzing networks with/without inpainting pretraining via the information stored in the weight (IIW), we find that inpainting pretraining improves restoration quality in non-shadow regions and enhances the generalization ability of networks significantly. Additionally, shadow removal fine-tuning enables networks to fill in the details of shadow regions. Inspired by these observations we formulate shadow removal as an adaptive fusion task that takes advantage of both shadow removal and image inpainting. The extensive experiments show that our method empowered with inpainting outperforms all state-of-the-art methods.[[ArXiv]](https://arxiv.org/abs/2302.05361)
 <br>
 <p align="center">
-<a href = "https://colab.research.google.com/drive/16mdFLTaBGyeQMO5KErDTClr3gW4WP1di?usp=sharing">
+<a href = "https://#">
     <img src="./images/colab.svg">
 </a>
 <br>
