@@ -27,8 +27,8 @@ pip install -r requirements.txt
 
 ## Dataset
 
-- [ISTD+](http://#)
-- [SRD](https://#)
+- [ISTD+](https://github.com/cvlab-stonybrook/SID)
+- SRD[Email](https://people.ucas.edu.cn/~tianjd)
 
 - For data folder path (ISTD+) organize them as following:
 
